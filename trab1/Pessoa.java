@@ -5,6 +5,7 @@ public class Pessoa {
     private String nif;
     private String nome;
 
+    
     public Pessoa(String nome) {
         this("0", nome);
     }

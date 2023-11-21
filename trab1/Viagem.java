@@ -27,6 +27,10 @@ public class Viagem implements Comparable<Viagem>{
         this.motorista = m;
         this.passageiros = new LinkedHashSet<>();
     }
+    
+    public int getCod() {
+        return cod;
+    }
 
     public String getLocalPartida() {
         return localPartida;
