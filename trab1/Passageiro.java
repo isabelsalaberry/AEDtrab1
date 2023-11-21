@@ -13,4 +13,14 @@ public class Passageiro extends Pessoa{
     public String getTelefone() {
         return telefone;
     }
+
+    public Viagem getBilhete() {
+        return bilhete;
+    }
+
+    public void setBilhete(Viagem bilhete) {
+        this.bilhete = bilhete;
+    }
+    
+    
 }

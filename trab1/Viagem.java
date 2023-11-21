@@ -80,4 +80,12 @@ public class Viagem implements Comparable<Viagem>{
     public double getReceitas(){
         return 0.0;
     }
+
+    public LinkedHashSet<Passageiro> getPassageiros() {
+        return passageiros;
+    }
+
+    
+    
 }
+
