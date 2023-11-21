@@ -2,8 +2,8 @@ package trab1;
 
 public class Pessoa {
 
-    private String nif;
-    private String nome;
+    protected String nif;
+    protected String nome;
 
     
     public Pessoa(String nome) {
