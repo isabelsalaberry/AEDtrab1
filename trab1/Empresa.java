@@ -3,6 +3,7 @@ package trab1;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
+import java.util.TreeSet;
 
 /**
  * @author Pedro Henrique Filla Decolin - a52982
@@ -12,14 +13,14 @@ import java.util.LinkedHashSet;
 public class Empresa {
 
     private LinkedHashSet<Motorista> motoristas;
-    private LinkedHashSet<Viagem> viagens;
+    private TreeSet<Viagem> viagens;
 
     /**
      * Construtor de Empresa sem nenhum parâmetro. Apenas inicaliza as listas
      */
     public Empresa() {
         this.motoristas = new LinkedHashSet<>();
-        this.viagens = new LinkedHashSet<>();
+        this.viagens = new TreeSet<>();
     }
 
     /**
@@ -40,11 +41,12 @@ public class Empresa {
      * @param dp 'Data de Partida' da viagem a ser criada
      * @param pb 'Preço do Bilhete' da viagem a ser criada
      * @param nl 'Numero de Lugares' da viagem a ser criada
+     * @param m  'Motorista' da viagem a ser criada
      * @return 'true' se a operação foi bem sucedida, caso contrário 'false'
      */
-    public boolean addViagem(String lp, String ld, Date dp, double pb, int nl){
+    public boolean addViagem(String lp, String ld, Date dp, double pb, int nl, Motorista m){
         //add uma viagem no LinkedHashSet de viagens da empresa e no TreeMap de viagens do motorista
-        return viagens.add(new Viagem(lp,ld,dp, pb, nl, null));
+        return viagens.add(new Viagem(lp,ld,dp, pb, nl, m));
     }
 
     /**
@@ -100,17 +102,5 @@ public class Empresa {
         for (Viagem v : this.viagens) receitasTotais += v.getReceitas();
 
         return receitasTotais;
-    }
-
-    /**
-     * Atrela um motorista à uma viagem
-     * @param m 'Motorista' a ser selecionado para a viagem
-     * @param v 'Viagem' a ser atrelada
-     */
-    public void addMotoristaAViagem(Motorista m, Viagem v){
-        if (this.motoristas.contains(m) && this.viagens.contains(v)){
-            m.addViagem(v.getLocalPartida(), v.getLocalDestino(), v.getDataPartida(), v.getPrecoBilhete(), v.getNumLugares());
-            v.setMotorista(m);
-        }
     }
 }
