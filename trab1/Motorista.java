@@ -33,4 +33,13 @@ public class Motorista extends Pessoa{
     public void setSalario(double salario) {
         this.salario = salario;
     }
+
+    @Override
+    public String toString() {
+        return "\t" + "====================\n" +
+                "\t" + "nif: " + nif + "\n" +
+                "\t" + "nome: " + nome + "\n" +
+                "\t" + "salario: " + salario + "\n" +
+                "\t" + "====================\n";
+    }
 }

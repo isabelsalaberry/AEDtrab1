@@ -45,7 +45,6 @@ public class Empresa {
      * @return 'true' se a operação foi bem sucedida, caso contrário 'false'
      */
     public boolean addViagem(String lp, String ld, Date dp, double pb, int nl, Motorista m){
-        //add uma viagem no LinkedHashSet de viagens da empresa e no TreeMap de viagens do motorista
         return viagens.add(new Viagem(lp,ld,dp, pb, nl, m));
     }
 
@@ -54,9 +53,12 @@ public class Empresa {
      * @param nif 'NIF' do motorista a ser removido
      */
     public void removerMotorista(String nif){
-        Motorista m = new Motorista(nif, "", 0);
-        if (motoristas.contains(m))
-            motoristas.remove(m);
+        Iterator<Motorista> it = motoristas.iterator();
+        while (it.hasNext()){
+            Motorista m = it.next();
+            if (m.getNif().equals(nif))
+                it.remove();
+        }
     }
 
     /**
@@ -64,10 +66,10 @@ public class Empresa {
      * @param cod 'Codigo' da viagem a ser removida
      */
     public void removerViagem(int cod){
-        Iterator<Viagem>  it=viagens.iterator();
+        Iterator<Viagem>  it = viagens.iterator();
         while(it.hasNext()) {
-            Viagem viagem = it.next();
-            if (viagem.getCod()==cod) {
+            Viagem v = it.next();
+            if (v.getCod() == cod) {
                 it.remove();
             }
         }
@@ -102,5 +104,25 @@ public class Empresa {
         for (Viagem v : this.viagens) receitasTotais += v.getReceitas();
 
         return receitasTotais;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder str = new StringBuilder();
+
+        str.append("..................................\n");
+        str.append("Motoristas cadastrados na empresa:\n");
+        str.append("..................................\n");
+        for (Motorista m: motoristas) str.append(m.toString());
+        str.append("...............................\n");
+        str.append("Viagens cadastradas na empresa:\n");
+        str.append("...............................\n");
+        for (Viagem v: viagens) str.append(v.toString());
+        str.append("...........................\n");
+        str.append("Receitas totais da empresa:\n");
+        str.append("...........................\n");
+        str.append("Total: € " + getReceitasTotais() + "\n");
+
+        return str.toString();
     }
 }

@@ -147,4 +147,27 @@ public class Viagem implements Comparable<Viagem>{
     public double getReceitas(){
         return (this.precoBilhete * this.passageiros.size());
     }
+
+    @Override
+    public String toString() {
+        StringBuilder str = new StringBuilder();
+
+        str.append("\t" + "-------------------------\n");
+        str.append("\t" + "Codigo: " + cod + "\n");
+        str.append("\t" + "Local de Partida: " + localPartida + "\n");
+        str.append("\t" + "Local de Destino: " + localDestino + "\n");
+        str.append("\t" + "Data de Partida: " + dataPartida + "\n");
+        str.append("\t" + "Preco do Bilhete: € " + precoBilhete + "\n");
+        str.append("\t" + "Numero de Lugares: " + numLugares + " (disponiveis: " + getLugaresDisponiveis() + ") \n");
+        str.append("\t" + "Motorista: " + motorista.getNome() + "\n");
+        if (!this.passageiros.isEmpty()){
+            str.append("\t" + "......................................\n");
+            str.append("\t" + "Passageiros cadastrados para a viagem:\n");
+            str.append("\t" + "......................................\n");
+            for (Passageiro p: passageiros) str.append(p.toString());
+        }
+        str.append("\t" + "-------------------------\n");
+
+        return str.toString();
+    }
 }

@@ -39,6 +39,13 @@ public class Passageiro extends Pessoa{
     public void setBilhete(Viagem bilhete) {
         this.bilhete = bilhete;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "\t\t" + "====================\n" +
+                "\t\t" + "nif: " + nif + "\n" +
+                "\t\t" + "nome: " + nome + "\n" +
+                "\t\t" + "telefone: " + telefone + "\n" +
+                "\t\t" + "====================\n";
+    }
 }
