@@ -1,9 +1,8 @@
-package principal;
+package trab1.principal;
 
 import trab1.Empresa;
 import trab1.Motorista;
 import trab1.Passageiro;
-import trab1.Viagem;
 
 import java.util.Date;
 

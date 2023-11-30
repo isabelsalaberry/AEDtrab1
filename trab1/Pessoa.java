@@ -1,5 +1,8 @@
 package trab1;
 
+/**
+ * Representa uma Pessoa genérica
+ */
 public class Pessoa {
 
     protected String nif;

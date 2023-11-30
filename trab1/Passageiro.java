@@ -1,5 +1,8 @@
 package trab1;
 
+/**
+ * Representa um passageiro, herdando de pessoa e adicionando atributos e métodos
+ */
 public class Passageiro extends Pessoa{
 
     private String telefone;

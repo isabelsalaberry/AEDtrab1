@@ -6,9 +6,9 @@ import java.util.LinkedHashSet;
 import java.util.TreeSet;
 
 /**
+ * Representa uma empresa. Conta com uma coleção de motoristas e viagens e métodos para gerenciar estas coleções
  * @author Pedro Henrique Filla Decolin - a52982
  * @author Isabel Irigon Salaberry - a52983
- * 
  */
 public class Empresa {
 

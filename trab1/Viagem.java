@@ -3,6 +3,9 @@ package trab1;
 import java.util.Date;
 import java.util.LinkedHashSet;
 
+/**
+ * Representa uma viagem. Possui atributos que a identificam, um código gerado de forma automática e sequencial, um motorista relacionado e uma coleção de passageiros. Possui métodos para gerenciar a viagem
+ */
 public class Viagem implements Comparable<Viagem>{
 
     private static int id = 0; //constante atrelada à classe

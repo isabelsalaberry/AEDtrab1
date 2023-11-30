@@ -3,6 +3,9 @@ package trab1;
 import java.util.Date;
 import java.util.TreeSet;
 
+/**
+ * Representa um motorista, herdando de pessoa e adicionando atributos e métodos
+ */
 public class Motorista extends Pessoa{
 
     private double salario;
